@@ -39,6 +39,7 @@ for i in HDAC8 FTase GGTase;do
 	cd ../
 done
 
+bash analyze.sh
 #
 # After that, do whatever you want.
 # Here's a typical test for a Mini binary, assuming there's a "flags" file
