@@ -1,7 +1,7 @@
 #! /bin/bash
 
-ROSETTA_BIN="/vol/ek/share/rosetta/latest_weekly/main/source/bin"
-ROSETTA_DB="/vol/ek/share/rosetta/latest_weekly/main/database"
+ROSETTA_BIN="rosetta/main/source/bin"
+ROSETTA_DB="rosetta/main/database"
 
 	for i in $(cat input_files/peptide.list)
 	do

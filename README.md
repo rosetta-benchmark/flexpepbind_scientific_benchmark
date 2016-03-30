@@ -17,6 +17,11 @@ To run on the specific systems here provided go to that directory and then
 a. Run fpbind_run.sh script located in the scripts directory. This will minimize the peptide-protein complexes after threading peptide sequence (listed in the input_files/peptide.list file) one by one onto the template.
 b. After the ran finished run fpbind_analysis.sh located in the scripts directory. It will extract the relevent scores (I_sc, reweighted_sc, pep_sc, pep_sc_noref) of the minimized structures & save it in score_analysis/ directory.
 
+You need to change the paths of the Rosetta executables and database directories in the fpbind_run script.
+
+ ROSETTA_BIN="rosetta/main/source/bin"
+ ROSETTA_DB="rosetta/main/database/"
+
 Ex.
 $ cd HDAC8/
 $ scripts/fpbind_run.sh
