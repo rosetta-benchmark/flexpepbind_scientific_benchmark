@@ -32,14 +32,21 @@
 cd %(workdir)s
 
 #Running flexpepbind protcol on three biological systems
-for i in HDAC8 FTase GGTase;do
+for i in HDAC8 FTase;do
 	cd $i/
 	scripts/fpbind_run.sh
 	scripts/fpbind_analysis.sh
 	cd ../
 done
 
-bash analyze.sh
+for i in HDAC8 FTase;do
+  cd $i
+  for j  in `cat input_files/peptide.list`;do
+    [ -r $j/Minimization/min.score.sc ] || exit 1
+  done
+  cd ../
+done
+
 #
 # After that, do whatever you want.
 # Here's a typical test for a Mini binary, assuming there's a "flags" file

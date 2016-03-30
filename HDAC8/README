@@ -1,31 +1,22 @@
 To run the protocol on each system go the directory and then
-1.run scripts/fpbind_run.sh  ( This will minize the peptide after threading it on the template)
-2.run scripts/fpbind_analysis.sh ( Extract the scores of the minimized structure & save it in score_analysis/ directory)
+1.run fpbind_run.sh script located in the scripts directory.This will minimize the peptide-protein complexes after threading peptide sequence one by one onto the template.
+2.run fpbind_analysis.sh located in the scripts directory. It will extract the relevent scores (I_sc, reweighted_sc, pep_sc, pep_sc_noref) of the minimized structures & save it in score_analysis/ directory.
 
-Ex. 
+Ex.
 
-cd HDAC8/
-scripts/fpbind_run.sh 
-run scripts/fpbind_analysis.sh
+$ cd HDAC8/
+$ scripts/fpbind_run.sh 
+$ scripts/fpbind_analysis.sh
 
-output is the score with different scoring term 
-For example in score_analysis/pep_sc_noref
-$cat score_analysis/pep_sc_noref
--5.100
--6.715
--5.489
--5.124
--6.765
--2.972
--1.996
--2.625
--2.065
-0.831
+The output is the score with different scoring term 
+For example in score_analysis/I_sc
 
+$ paste input_files/peptide.list score_analysis/I_sc 
+GYKFGC	-16.757
+GFKWGC	-17.108
+GFKFGC	-16.352
+GMKDGC	-13.870
+GDKDGC	-13.179
+GQKIGC	-13.408
 
-pep_sc_noref scores for 10 peptide (top5 binders & bottom 5 are non binders)
-
-
-
-
-
+Interface scores for 6 peptide (top 3 are HDAC8 substrates & bottom 3 are not HDAC8 substrates)
